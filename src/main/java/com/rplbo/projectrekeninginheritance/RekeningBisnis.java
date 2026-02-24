@@ -1,7 +1,7 @@
 package com.rplbo.projectrekeninginheritance;
 
 public class RekeningBisnis extends Rekening {
-
+    public final double BUNGA_SETOR = 0.001;
     public RekeningBisnis(Nasabah nasabah) {
         super(nasabah);
     }
@@ -10,15 +10,15 @@ public class RekeningBisnis extends Rekening {
         super(nasabah, saldo);
     }
 
-    @Override
     public void penyetoran(int jumlah) {
         int total = jumlah + bunga(jumlah);
         super.penyetoran(total);
+        //if(jumlah > 0) {
+        //  int totalSetoran = jumlah + bunga(jumlah);
+        //super.penyetoran(totalSetoran);
     }
-
-
     private int bunga(int jumlah) {
-        return (int) (jumlah + 0.1/100);
+        //return (int) BUNGA_SETOR * jumlah;
+        return (int) (jumlah * 0.1/100);
     }
 }
-

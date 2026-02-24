@@ -11,14 +11,13 @@ public class RekeningKeluarga extends Rekening{
         super(nasabah, saldo);
     }
 
-    @Override
     public void penyetoran(int jumlah) {
         int total = jumlah + bunga(jumlah);
         super.penyetoran(total);
     }
 
     private int bunga(int jumlah) {
-        return (int) (jumlah + 0.5/100);
+        return (int) (jumlah * 0.5/100);
     }
 
     @Override
